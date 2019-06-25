@@ -1,5 +1,11 @@
 <b>howdy</b>
 <br>
-<%= params[:id] %>
+<%= "Size: #{params[:id]}"%>
 <br>
-filters
+
+<% Locker.where(size: params[:id]).each do |lock| %>
+    <%= "Locker Number: #{lock.number}" %>
+    <br>
+<%end%>
+<br><br><br><br>
+add filters
