@@ -9,9 +9,13 @@ class LockerController < ApplicationController
   def view
   end
   
+  def index
+  end
+  
   def create
     @locker = Locker.new(locker_params)
     if(@locker.save)
+      @locker.update(number: @locker.id)
       redirect_to '/locker'
     else
       redirect_to '/locker'
