@@ -5,6 +5,7 @@
 
 <% Locker.where(size: params[:id]).each do |lock| %>
     <%= "Locker Number: #{lock.number}" %>
+    <%= "Student: #{lock.student}"%>
     <br>
 <%end%>
 <br><br><br><br>
