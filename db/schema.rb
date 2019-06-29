@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190510182921) do
+ActiveRecord::Schema.define(version: 20190629080836) do
 
   create_table "lockers", force: :cascade do |t|
     t.string   "number"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20190510182921) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "floor_section"
+    t.string   "ensemble"
   end
 
 end

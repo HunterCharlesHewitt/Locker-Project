@@ -1,6 +1,21 @@
 <h1>Create new lockers</h1>
 
 <%= form_for(@locker, url: locker_index_path) do |f| %>
-<%= f.text_field :size, class: "form-control", placeholder: "Locker Size", required: true, autocomplete: "off"%> 
+    <h3>Locker Size</h3>
+    <%= f.text_field :size, class: "form-control", placeholder: "2", autocomplete: "off"%>
+    <h3>Locker Number</h3> 
+    <%= f.text_field :number, class: "form-control", placeholder: "24", autocomplete: "off"%> 
+    <h3>Student</h3>
+    <%= f.text_field :student, class: "form-control", placeholder: "Hunter Hewitt", autocomplete: "off"%> 
+    <h3>Instrument</h3>
+    <%= f.text_field :instrument, class: "form-control", placeholder: "Double Bass", autocomplete: "off"%> 
+    <h3>Primary Ensemble</h3>
+    <!-- change ensemble to be a drop down -->
+    <%= f.text_field :ensemble, class: "form-control", placeholder: "Chamber Orchestra", autocomplete: "off"%> 
+    <br>
+    <br>
+    <br>
     <%=f.submit "Add Locker"%>
+    
+    <!-- or add multiple lockers and edit info later -->
 <%end%>
