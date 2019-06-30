@@ -1,12 +1,31 @@
-<b>howdy</b>
+<link href="path/to/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet">
+<script src="path/to/bootstrap-editable/js/bootstrap-editable.min.js"></script>
+<!--<b>howdy</b>
 <br>
 <%= "Size: #{params[:id]}"%>
-<br>
+<br>-->
 
-<% Locker.where(size: params[:id]).each do |lock| %>
-    <%= "Locker Number: #{lock.number}" %>
-    <%= "Student: #{lock.student}"%>
-    <br>
-<%end%>
-<br><br><br><br>
-add filters
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Locker Number</th>
+        <th>Size</th>
+        <th>Student Name</th>
+        <th>Instrument</th>
+        <th>Ensemble</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Locker.where(size: params[:id]).each do |lock| %>
+        <tr>    
+            <td><%=lock.number%></td>
+            <td><%=lock.size%></td>
+            <td><%=lock.student%></td>
+            <td><%=lock.instrument%></td>
+            <td><%=lock.ensemble%></td>
+            <td><a class="btn btn-primary" href="#" role="button">Edit</a></td>
+        </tr>
+      <%end%>
+    </tbody>
+ </table>

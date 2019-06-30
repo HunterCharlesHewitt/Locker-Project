@@ -23,6 +23,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'bootstrap-sass', '~> 3.4.1'
+
+gem 'sassc-rails', '>= 2.1.0'
+
 #use cucumber
 group :test, :development do
   gem 'cucumber-rails', :require => false
