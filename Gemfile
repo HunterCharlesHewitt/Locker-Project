@@ -31,8 +31,6 @@ gem 'best_in_place', '~> 3.0.1'
 
 gem 'responders', '~> 2.0'
 
-gem 'devise'
-
 #use cucumber
 group :test, :development do
   gem 'cucumber-rails', :require => false
