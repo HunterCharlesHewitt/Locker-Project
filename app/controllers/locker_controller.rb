@@ -1,3 +1,5 @@
+require 'Password'
+
 class LockerController < ApplicationController
   
   @@sorted = Locker.find_each()
@@ -7,7 +9,7 @@ class LockerController < ApplicationController
   end
   
   def sign_in
-    if(params[:anything][:password] == Locker.first.password)
+    if(params[:anything][:password] == Password::pass)
       redirect_to locker_index_path
     end
   end
