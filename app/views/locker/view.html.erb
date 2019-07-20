@@ -1,31 +1,11 @@
-<link href="path/to/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet">
-<script src="path/to/bootstrap-editable/js/bootstrap-editable.min.js"></script>
-<!--<b>howdy</b>
-<br>
-<%= "Size: #{params[:id]}"%>
-<br>-->
-
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Locker Number</th>
-        <th>Size</th>
-        <th>Student Name</th>
-        <th>Instrument</th>
-        <th>Ensemble</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% Locker.where(size: params[:id]).each do |lock| %>
-        <tr>    
-            <td><%=lock.number%></td>
-            <td><%=lock.size%></td>
-            <td><%=lock.student%></td>
-            <td><%=lock.instrument%></td>
-            <td><%=lock.ensemble%></td>
-            <td><a class="btn btn-primary" href="#" role="button">Edit</a></td>
-        </tr>
-      <%end%>
-    </tbody>
- </table>
+<%= form_for :anything, url: 'view' do |form| %>
+  <h3>Number of Lockers to Add</h3>
+  <%= form.text_field :number, class: "form-control", placeholder: "10", autocomplete: "off" %>
+  <h3>Size of Lockers to Add: Only enter if all lockers to add have same size</h3> 
+  <%= form.text_field :size, class: "form-control", placeholder: "2", autocomplete: "off" %>
+  <h3>Locker Number of First Locker</h3> 
+  <%= form.text_field :first, class: "form-control", placeholder: "123", autocomplete: "off" %>
+  <br>
+  <br>
+  <%= form.submit  "Add Lockers"%>
+<% end  %>

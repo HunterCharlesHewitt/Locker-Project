@@ -1,20 +1,41 @@
 
-<h1>This is the header</h1>
-<%= link_to("size: 2", "/locker/view/#{2}")%>
-<br>
-<%= link_to('size: 4', "/locker/view/#{4}") %>
-<br>
-<%= link_to('size: 7', "/locker/view/#{7}") %>
-<br>
-<%= link_to('size: 8', "/locker/view/#{8}") %>
-<br>
-<%= link_to('size: 9', "/locker/view/#{9}") %>
-<br>
-<%= link_to('size: 10', "/locker/view/#{10}") %>
-<br>
-<%= link_to('size: 12', "/locker/view/#{12}") %>
-<br>
-<%= link_to('size: 15', "/locker/view/#{15}") %>
-<br>
-<%= link_to('All sizes', "/locker/view/#{0}") %>
-<h1><%= link_to('Add New Lockers', new_locker_path) %></h1>
+<!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>-->
+<% if (session[:type].nil?) %>
+  <%session[:type] = :number%>
+<% end %>
+<table class="table table-striped sortable">
+    <thead>
+      <tr>
+        <th><%=link_to("Locker Number", "sort/number")%></th>
+        <th><%=link_to("Size", "sort/size")%></th>
+        <th><%=link_to("Student Name", "sort/student")%></th>
+        <th><%=link_to("Instrument", "sort/instrument")%></th>
+        <th><%=link_to("Ensemble", "sort/ensemble")%></th>
+        <th><%=link_to("Status", "sort/status")%></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Locker.my_order(session[:type], session[:status]).each do |lock| %>
+        <tr class="table-success">    
+            <td><%= best_in_place lock, :number, :as => :textarea, :ok_button => 'Okay', :url => "/locker/#{lock.id}", :cancel_button => "Cancel" %></td>
+            <td><%= best_in_place lock, :size, :as => :textarea, :ok_button => 'Okay', :cancel_button => "Cancel" %></td>
+            <td><%= best_in_place lock, :student, :as => :textarea, :ok_button => 'Okay', :cancel_button => "Cancel" %></td>
+            <td><%= best_in_place lock, :instrument, :as => :textarea, :ok_button => 'Okay', :cancel_button => "Cancel" %></td>
+            <td><%= best_in_place lock, :ensemble, :as => :select, :collection => [["-","-"],["Wind Symphony","Wind Symphony"],["Symphonic Winds","Symphonic Winds"],["Symphonic Band","Symphonic Band"],["Concert Band","Concert Band"], ["Jazz I", "Jazz I"],["Jazz II", "Jazz II"],["Chamber Orchestra","Chamber Orchestra"], ["Philharmonic Orchestra","Philharmonic Orchestra"]]%></td>
+            <% if(lock.student == "" or lock.student == "-") %>
+              <td><a class="btn btn-success" href="#" role="button">Vacant</a></td>
+            <% else %>
+              <td><a class="btn btn-danger" href="#" role="button">Full</a></td>
+            <% end %>
+        </tr>
+      <%end%>
+      <td><a class="btn btn-primary" href="locker/new" role="button">Add New Locker</a></td>
+    </tbody>
+ </table>
+
+
