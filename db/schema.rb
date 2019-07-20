@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190629080836) do
+ActiveRecord::Schema.define(version: 20190720213944) do
 
   create_table "lockers", force: :cascade do |t|
-    t.string   "number"
+    t.integer  "number"
     t.string   "size"
     t.string   "student"
     t.string   "UIN"
@@ -24,5 +24,18 @@ ActiveRecord::Schema.define(version: 20190629080836) do
     t.string   "floor_section"
     t.string   "ensemble"
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

@@ -27,6 +27,12 @@ gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'sassc-rails', '>= 2.1.0'
 
+gem 'best_in_place', '~> 3.0.1'
+
+gem 'responders', '~> 2.0'
+
+gem 'devise'
+
 #use cucumber
 group :test, :development do
   gem 'cucumber-rails', :require => false
