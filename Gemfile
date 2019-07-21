@@ -36,6 +36,11 @@ group :test, :development do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 #use capybara
 gem 'capybara'
