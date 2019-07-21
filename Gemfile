@@ -32,13 +32,9 @@ gem 'best_in_place', '~> 3.0.1'
 gem 'responders', '~> 2.0'
 
 #use cucumber
-group :test, :development do
-  gem 'cucumber-rails', :require => false
-  # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner'
+group :development, :test do # <<<< :development, not devlopment
   gem 'sqlite3'
 end
-
 group :production do
   gem 'pg'
 end
