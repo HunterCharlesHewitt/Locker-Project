@@ -7,6 +7,8 @@
 <% if (session[:type].nil?) %>
   <%session[:type] = :number%>
 <% end %>
+
+<% if (session[:signed_in]) %>
 <table class="table table-striped sortable">
     <thead>
       <tr>
@@ -37,5 +39,9 @@
       <td><a class="btn btn-primary" href="locker/new" role="button">Add New Locker</a></td>
     </tbody>
  </table>
-
+<% else %>
+  <script type="text/javascript">
+    window.location.href="/"  // put your correct path in a string here
+  </script>
+<%end%>
 
