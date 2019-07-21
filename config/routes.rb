@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'locker#splash'
   get "locker_sign_in", to: 'locker#sign_in'
+  get 'logout', to: 'locker#logout'
   post 'pindex', to: 'locker#index'
   get 'view',   to: 'locker#view'
   post 'view', to: 'locker#many_new'

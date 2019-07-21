@@ -1,3 +1,4 @@
+<% if (session[:signed_in]) %>
 <h1>Create new locker with student OR <%=link_to('Create Multiple Lockers', view_path)%></h1>
 <br>
 <%= form_for(@locker, url: locker_index_path) do |f| %>
@@ -18,4 +19,9 @@
     <%=f.submit "Add Locker"%>
     
     <!-- or add multiple lockers and edit info later -->
+<%end%>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="/"  // put your correct path in a string here
+  </script>
 <%end%>

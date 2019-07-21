@@ -1,7 +1,5 @@
-require 'Password'
 
 class LockerController < ApplicationController
-  
   @@sorted = Locker.find_each()
   
   def new
@@ -9,16 +7,26 @@ class LockerController < ApplicationController
   end
   
   def sign_in
-    if(params[:anything][:password] == Password::pass)
+    if(params[:anything][:password] == "MUSATAMU")
+      session[:signed_in] = true
       redirect_to locker_index_path
+    else
+      flash[:warning] = "Enter Correct Password"
+      session[:signed_in] = false
+       redirect_to root_path
     end
+  end
+  
+  def logout
+    session[:signed_in] = false
+    redirect_to root_path
   end
   
   def splash
     if(!(session[:email].nil?))
       redirect_to locker_index_path
     end
-      
+     
   end
   
   def view

@@ -6,7 +6,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><%= link_to('Home', "/")%></li>
       <li><%= link_to('Locker View', locker_index_path)%></li>
-      <li class="dropdown">
+    <!--  <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Bands
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -24,8 +24,9 @@
           <li><a href="#">Philharmonic Orchestra</a></li>
         </ul>
       </li>
+            <li><a href="#">Add Student</a></li>-->
       <li><%= link_to('Add Locker', new_locker_path)%></li>
-      <li><a href="#">Add Student</a></li>
+      <li><%= link_to('Logout', logout_path)%></li>
     </ul>
   </div>
 </nav>
