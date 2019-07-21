@@ -33,7 +33,7 @@ gem 'responders', '~> 2.0'
 
 #use cucumber
 group :development, :test do # <<<< :development, not devlopment
-  gem 'sqlite3', '~> 1.3.13'
+  gem "sqlite3", "~> 1.3.6"
 end
 #use capybara
 gem 'capybara'
