@@ -30,10 +30,11 @@ gem 'sassc-rails', '>= 2.1.0'
 gem 'best_in_place', '~> 3.0.1'
 
 gem 'responders', '~> 2.0'
+gem "sqlite3", "~> 1.3.6"
 
 #use cucumber
 group :development, :test do # <<<< :development, not devlopment
-  gem "sqlite3", "~> 1.3.6"
+  
 end
 #use capybara
 gem 'capybara'
@@ -58,9 +59,4 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-end
-
-group :production do
-  gem 'pg'
-  gem 'unicorn'
 end
