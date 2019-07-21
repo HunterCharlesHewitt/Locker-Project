@@ -35,9 +35,6 @@ gem 'responders', '~> 2.0'
 group :development, :test do # <<<< :development, not devlopment
   gem 'sqlite3', '~> 1.3.13'
 end
-group :production do
-  gem 'pg'
-end
 #use capybara
 gem 'capybara'
 
