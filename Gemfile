@@ -30,8 +30,10 @@ gem 'sassc-rails', '>= 2.1.0'
 gem 'best_in_place', '~> 3.0.1'
 
 gem 'responders', '~> 2.0'
+
 gem "sqlite3", "~> 1.3.6"
 
+gem 'devise'
 #use cucumber
 group :development, :test do # <<<< :development, not devlopment
   
