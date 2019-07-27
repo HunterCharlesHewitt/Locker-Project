@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190720213944) do
+ActiveRecord::Schema.define(version: 20190727194551) do
 
   create_table "lockers", force: :cascade do |t|
     t.integer  "number"
