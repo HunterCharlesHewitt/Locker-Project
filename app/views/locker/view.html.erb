@@ -1,4 +1,4 @@
-<% if((session[:signed_in])) %>
+<% if user_signed_in? %>
 <%= form_for :anything, url: 'view' do |form| %>
   <h3>Number of Lockers to Add</h3>
   <%= form.text_field :number, class: "form-control", placeholder: "10", autocomplete: "off" %>

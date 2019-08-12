@@ -1,4 +1,4 @@
-<% if (session[:signed_in]) %>
+<% if user_signed_in? %>
 <h1>Create new locker with student OR <%=link_to('Create Multiple Lockers', view_path)%></h1>
 <br>
 <%= form_for(@locker, url: locker_index_path) do |f| %>
@@ -6,13 +6,15 @@
     <%= f.text_field :size, class: "form-control", placeholder: "2", autocomplete: "off"%>
     <h3>Locker Number</h3> 
     <%= f.text_field :number, class: "form-control", placeholder: "24", autocomplete: "off"%> 
-    <h3>Student</h3>
-    <%= f.text_field :student, class: "form-control", placeholder: "Hunter Hewitt", autocomplete: "off"%> 
+    <h3>Student First Name</h3>
+    <%= f.text_field :student_first_name, class: "form-control", placeholder: "Hunter", autocomplete: "off"%> 
+    <h3>Student Last Name</h3>
+    <%= f.text_field :student_last_name, class: "form-control", placeholder: "Hewitt", autocomplete: "off"%> 
     <h3>Instrument</h3>
     <%= f.text_field :instrument, class: "form-control", placeholder: "Double Bass", autocomplete: "off"%> 
     <h3>Primary Ensemble</h3>
     <!-- change ensemble to be a drop down -->
-    <%= f.select :ensemble, ["-","Wind Symphony","Symphonic Winds","Symphonic Band","Concert Band", "Jazz I", "Jazz II","Chamber Orchestra","Philharmonic Orchestra"]%> 
+    <%= f.select :ensemble, ["-","Wind Symphony","Symphonic Winds","Symphonic Band","Concert Band", "Jazz I", "Jazz II","Chamber Orchestra","Philharmonic Orchestra", "FTAB"]%> 
     <br>
     <br>
     <br>
