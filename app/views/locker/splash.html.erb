@@ -5,15 +5,10 @@
 	}
 </style>
 
-<%= form_for(:anything, url: locker_sign_in_path, method: :get) do |f| %>
+<%= form_for(:anything, url: new_user_session_path, method: :get) do |f| %>
 				<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon"></span>
-				<%= f.password_field :password, 
-						class: 'form-control',
-						placeholder: "Password",
-						required:"required"%> 
-				</div>
 				</div>   
 			<%= f.hidden_field :Locker, value: Locker.new%>
 			<%= f.submit "Log In", class: "btn btn-primary btn-block btn-lg" %>
