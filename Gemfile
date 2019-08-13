@@ -48,9 +48,7 @@ gem 'capybara'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :production do
-  gem 'pg'
-end
+  gem 'pg','~> 0.20'
 
 group :development, :test do # <<<< :development, not devlopment
   #gem 'sqlite3', "~> 1.3.6"
