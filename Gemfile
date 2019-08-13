@@ -50,7 +50,9 @@ gem 'capybara'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'mysql2', '~> 0.3.18'
+group :production do
+  gem 'pg'
+end
 
 
 group :development, :test do

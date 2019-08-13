@@ -97,10 +97,10 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    mysql2 (0.3.21)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pg (1.1.4)
     public_suffix (3.1.1)
     rack (1.6.11)
     rack-test (0.6.3)
@@ -203,7 +203,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2 (~> 0.3.18)
+  pg
   rails (= 4.2.10)
   responders (~> 2.0)
   sass-rails (~> 5.0)
