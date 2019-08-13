@@ -22,6 +22,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
+  adapter: sqlite3
   <<: *default
   database: myapp_development
 
@@ -80,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: myapp_production
   username: myapp
   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
