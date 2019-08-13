@@ -49,6 +49,8 @@ gem 'capybara'
 # gem 'capistrano-rails', group: :development
 
   gem 'pg','~> 0.20'
+  
+  gem 'rails_12factor'
 
 group :development, :test do # <<<< :development, not devlopment
   #gem 'sqlite3', "~> 1.3.6"
